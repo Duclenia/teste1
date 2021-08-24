@@ -17,9 +17,9 @@ class EventController extends Controller
 
             $events = Event::where([
                 ['title', 'like', '%'.$search.'%']
-            ])->get();
+            ])->orderBy('date','desc')->get();
 
-        } else {
+        }else{
             $events = Event::all();
         }
 
