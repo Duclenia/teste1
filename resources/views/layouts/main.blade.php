@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="collapse navbar-collapse" id="navbar">
             <a href="/" class="navbar-brand">
-              <img src="/img/hdcevents_logo.svg" alt="HDC Events">
+              <img src="/img/logo.png" alt="HDC Events">
             </a>
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -37,8 +37,8 @@
               <li class="nav-item">
                 <form action="/logout" method="POST">
                   @csrf
-                  <a href="/logout" 
-                    class="nav-link" 
+                  <a href="/logout"
+                    class="nav-link"
                     onclick="event.preventDefault();
                     this.closest('form').submit();">
                     Sair

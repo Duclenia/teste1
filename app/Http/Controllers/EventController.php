@@ -8,9 +8,9 @@ use App\Models\Event;
 
 class EventController extends Controller
 {
-    
-    public function index() {
 
+    public function index() {
+        /*busca*/
         $search = request('search');
 
         if($search) {
@@ -21,8 +21,8 @@ class EventController extends Controller
 
         } else {
             $events = Event::all();
-        }        
-    
+        }
+
         return view('welcome',['events' => $events, 'search' => $search]);
 
     }
@@ -42,21 +42,21 @@ class EventController extends Controller
         $event->description = $request->description;
         $event->items = $request->items;
 
-        // Image Upload
+        // Imagem Upload
         if($request->hasFile('image') && $request->file('image')->isValid()) {
 
             $requestImage = $request->image;
 
             $extension = $requestImage->extension();
-
+            //pegando a imagem
             $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
-
+            //salvando no servidor
             $requestImage->move(public_path('img/events'), $imageName);
 
             $event->image = $imageName;
 
         }
-
+       //verificando o usuario
         $user = auth()->user();
         $event->user_id = $user->id;
 
@@ -71,7 +71,7 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
 
         return view('events.show', ['event' => $event]);
-        
+
     }
 
 }
