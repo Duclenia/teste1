@@ -163,11 +163,14 @@ header{
 
 #image-container img {
   border-radius: 10px;
+  width: 1000px;
+  height: 260px;
 }
 
 #info-container h1 {
   font-size: 36px;
   font-weight: 900;
+
 }
 
 #info-container p {
@@ -176,6 +179,26 @@ header{
   display: flex;
 }
 
+/*dashboard*/
+.dashboard-title-conteiner{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.dashboard-events-conteiner th{
+width: 25%;
+}
+
+.btn{
+margin-right: 10px;
+}
+
+/*enddashboard*/
+
+/* edit page */
+.img-preview{
+    width: 200px;
+    margin-top: 20px;
+}
 #info-container h3,
 #description-container h3 {
   font-size: 20px;
